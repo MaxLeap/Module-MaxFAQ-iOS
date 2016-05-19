@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Image bundle name</key>
+	<string>MLHelpCenterImages.bundle</string>
+	<key>FAQ section list view</key>
+	<dict>
+		<key>Title image</key>
+		<string></string>
+	</dict>
+	<key>FAQ item list view</key>
+	<dict>
+		<key>Title image</key>
+		<string></string>
+	</dict>
+	<key>FAQ item content view</key>
+	<dict>
+		<key>Title image</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

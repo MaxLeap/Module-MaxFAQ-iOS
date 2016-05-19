@@ -1,0 +1,6 @@
+framework module MaxFAQ {
+  umbrella header "MaxFAQ.h"
+
+  export *
+  module * { export * }
+}
