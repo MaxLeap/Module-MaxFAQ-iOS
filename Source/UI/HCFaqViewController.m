@@ -9,6 +9,7 @@
 #import "HCFaqItem.h"
 #import "UIImage+Color.h"
 #import "HCLocalizable.h"
+#import "MLFaqImageHelper.h"
 
 @interface HCSearchBar : UISearchBar
 @end

@@ -4,6 +4,29 @@
 <dict>
 	<key>Image bundle name</key>
 	<string>MLHelpCenterImages.bundle</string>
+	<key>Navigation Bar</key>
+	<dict>
+		<key>Title font name</key>
+		<string>HelveticaNeue</string>
+		<key>Status Bar Style</key>
+		<integer>1</integer>
+		<key>Title font size</key>
+		<string>16</string>
+		<key>Title color</key>
+		<string>FFFFFF</string>
+		<key>Background color</key>
+		<string>64A7EB</string>
+		<key>Bar button font name</key>
+		<string>HelveticaNeue-Light</string>
+		<key>Bar button font size</key>
+		<string>14</string>
+		<key>Bar button text color</key>
+		<string>FFFFFF</string>
+		<key>Contact us button image</key>
+		<string></string>
+		<key>Contact us button image highlighted</key>
+		<string></string>
+	</dict>
 	<key>FAQ section list view</key>
 	<dict>
 		<key>Title image</key>

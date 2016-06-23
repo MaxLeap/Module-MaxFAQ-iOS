@@ -4,7 +4,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MLFaqImageHelper.h"
 
 @interface HCFaqBaseViewController : UIViewController
 

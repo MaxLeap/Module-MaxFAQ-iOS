@@ -12,6 +12,73 @@
 
 #define DEFAULT_IMAGE_BUNDLE @"MLFaqImages.bundle"
 
+
+@interface HCFaqNavigationBarAttributes ()
+
+@property (nonatomic, strong) NSString *contactUsImageName;             // Contact us button image
+@property (nonatomic, strong) NSString *contactUsImageHighlightedName;  // Contact us button image highlighted
+@end
+
+@implementation HCFaqNavigationBarAttributes
+
+- (instancetype)init {
+    if (self = [super init]) {
+        self.barStyle = UIBarStyleBlack;
+        self.titleFont = [UIFont fontWithName:@"HelveticaNeue" size:16];
+        self.titleColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor colorWithRed:100/255.f green:167/255.f blue:235/255.f alpha:1.00f];
+        self.buttonTextColor = [UIColor whiteColor];
+        self.buttonTextFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+    }
+    return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    if (self = [self init]) {
+        self.barStyle = [dictionary[@"Status Bar Style"] integerValue];
+        NSString *fontName = dictionary[@"Title font name"];
+        if (fontName) {
+            CGFloat fontSize = [dictionary[@"Title font size"] doubleValue];
+            UIFont *font = [UIFont fontWithName:fontName size:fontSize];
+            if (font) {
+                self.titleFont = font;
+            } else {
+                MLLogInfoF(@"cannot find font with name '%@'", fontName);
+            }
+        }
+        self.titleColor = UIColorFromHEXString(dictionary[@"Title color"])?:self.titleColor;
+        self.backgroundColor = UIColorFromHEXString(dictionary[@"Background color"])?:self.backgroundColor;
+        self.buttonTextColor = UIColorFromHEXString(dictionary[@"Bar button text color"])?:self.buttonTextColor;
+        
+        NSString *btnTextFontName = dictionary[@"Bar button font name"];
+        if (btnTextFontName.length > 0) {
+            CGFloat btnTextFontSize = [dictionary[@"Bar button font size"] doubleValue];
+            UIFont *font = [UIFont fontWithName:btnTextFontName size:btnTextFontSize];
+            if (font) {
+                self.buttonTextFont = font;
+            } else {
+                MLLogInfoF(@"cannot find font with name '%@'", btnTextFontName);
+            }
+        }
+        
+        self.contactUsImageName = dictionary[@"Contact us button image"];
+        self.contactUsImageHighlightedName = dictionary[@"Contact us button image highlighted"];
+    }
+    return self;
+}
+
+- (UIImage *)contactUsImage {
+    return HCImageNamed(self.contactUsImageName);
+}
+
+- (UIImage *)contactUsImageHighlighted {
+    return HCImageNamed(self.contactUsImageHighlightedName);
+}
+
+@end
+
+#pragma mark -
+
 @interface HCFaqSectionListViewAttributes ()
 @property (nonatomic, strong) NSString *titleImageName;
 @end
@@ -78,6 +145,11 @@
 
 @implementation HCFaqTheme
 
++ (void)load {
+    // load current theme
+    [HCFaqTheme currentTheme];
+}
+
 + (instancetype)currentTheme {
     static HCFaqTheme *_currentTheme = nil;
     static dispatch_once_t onceToken;
@@ -140,6 +212,7 @@
         [MLFaqImageHelper registerBundleWithPath:imgBundleName];
     }
     
+    _navigationBarAttributes = [[HCFaqNavigationBarAttributes alloc] initWithDictionary:config[@"Navigation Bar"]];
     _sectionListAttr = [[HCFaqSectionListViewAttributes alloc] initWithDictionary:config[@"FAQ section list view"]];
     _itemListAttr = [[HCFaqItemListViewAttributes alloc] initWithDictionary:config[@"FAQ item list view"]];
     _itemContentAttr = [[HCFaqItemContentViewAttributes alloc] initWithDictionary:config[@"FAQ item content view"]];
