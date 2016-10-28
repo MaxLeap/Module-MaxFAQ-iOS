@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <MaxLeap/MaxLeap.h>
 
-#error Please replace the appId and clientKey with your app's.
+#warning Please replace the appId and clientKey with your own.
 #define MAXLEAP_APPID           @"your_maxleap_appId"
 #define MAXLEAP_CLIENTKEY       @"your_maxleap_clientKey"
 
