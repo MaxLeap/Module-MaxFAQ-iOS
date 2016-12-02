@@ -7,7 +7,7 @@
 #import "HCFaqItemViewController.h"
 #import "HCFaqCient.h"
 #import "HCFaqItem.h"
-#import "UIImage+Color.h"
+#import "UIImage+HCFAQColor.h"
 #import "HCLocalizable.h"
 #import "MLFaqImageHelper.h"
 

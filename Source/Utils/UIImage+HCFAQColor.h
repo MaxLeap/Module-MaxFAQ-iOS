@@ -6,9 +6,9 @@
 #import <UIKit/UIKit.h>
 #import <Accelerate/Accelerate.h>
 
-void maxfaq_load_UIImage_HCColor();
+void maxleap_load_UIImage_HCFAQColor();
 
-@interface UIImage (HCColor)
+@interface UIImage (HCFAQColor)
 
 + (UIImage *)hc_imageWithColor:(UIColor *)color;
 + (UIImage *)hc_imageWithColor:(UIColor *)color withSize:(CGSize)size;

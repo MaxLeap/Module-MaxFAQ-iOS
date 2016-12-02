@@ -13,13 +13,13 @@ FOUNDATION_EXPORT double MaxFAQVersionNumber;
 FOUNDATION_EXPORT const unsigned char MaxFAQVersionString[];
 
 
-#import "HCFaqBaseViewController.h"
-#import "HCFaqCient.h"
-#import "HCFaqItem.h"
-#import "HCFaqItemListViewController.h"
-#import "HCFaqItemViewController.h"
-#import "HCFaqSection.h"
-#import "HCFaqViewController.h"
-#import "HCSectionListViewController.h"
-#import "MLFaqDejalStatusView.h"
+#import <MaxFAQ/HCFaqBaseViewController.h>
+#import <MaxFAQ/HCFaqCient.h>
+#import <MaxFAQ/HCFaqItem.h>
+#import <MaxFAQ/HCFaqItemListViewController.h>
+#import <MaxFAQ/HCFaqItemViewController.h>
+#import <MaxFAQ/HCFaqSection.h>
+#import <MaxFAQ/HCFaqViewController.h>
+#import <MaxFAQ/HCSectionListViewController.h>
+#import <MaxFAQ/MLFaqDejalStatusView.h>
 

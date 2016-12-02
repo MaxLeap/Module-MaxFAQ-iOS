@@ -3,11 +3,11 @@
 //  MusicDownloader
 //
 
-#import "UIImage+Color.h"
+#import "UIImage+HCFAQColor.h"
 
-void maxfaq_load_UIImage_HCColor() {};
+void maxleap_load_UIImage_HCFAQColor() {};
 
-@implementation UIImage (HCColor)
+@implementation UIImage (HCFAQColor)
 
 + (UIImage *)hc_imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0, 0, 1, 1);

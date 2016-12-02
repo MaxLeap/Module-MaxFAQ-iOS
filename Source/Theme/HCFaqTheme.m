@@ -9,7 +9,7 @@
 #import "MLLogging.h"
 #import "HEXRGBColor.h"
 #import "MLAssert.h"
-#import "UIImage+Color.h"
+#import "UIImage+HCFAQColor.h"
 
 #define DEFAULT_IMAGE_BUNDLE @"MLFaqImages.bundle"
 
@@ -23,7 +23,7 @@
 @implementation HCFaqNavigationBarAttributes
 
 + (void)load {
-    maxfaq_load_UIImage_HCColor();
+    maxleap_load_UIImage_HCFAQColor();
 }
 
 - (instancetype)init {
